@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Admin Dashboard</title>
+    <link rel="stylesheet" href="admin all css/dashboard.css" />
+    <link rel="stylesheet" href="admin all css/sidebar.css" />
+    <link rel="stylesheet" href="admin all css/teacher.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <div class="logo">
+            <img src="admin imgs/image copy.png" alt="logo" />
+            <h2>ABC School</h2>
+          </div>
+
+          <i class="fa fa-times" id="closeBtn"></i>
+        </div>
+
+        <ul class="menu">
+          <li>
+            <a href="admin.html"
+              ><i class="fa fa-home"></i><span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="event.html"
+              ><i class="fa fa-calendar"></i><span>Events & marquee</span></a
+            >
+          </li>
+          <li>
+            <a href="galery.html"
+              ><i class="fa fa-image"></i><span>Gallery</span></a
+            >
+          </li>
+          <li class="active">
+            <a href="teacher.html"
+              ><i class="fa fa-chalkboard-teacher"></i><span>Teachers</span></a
+            >
+          </li>
+          <li>
+            <a href="masages.html"
+              ><i class="fa fa-envelope"></i><span>Messages</span></a
+            >
+          </li>
+          <li>
+            <a href="result.html"
+              ><i class="fa fa-gear"></i><span>Result</span></a
+            >
+          </li>
+        </ul>
+
+        <div class="logout">
+          <i class="fa fa-sign-out-alt"></i><span>Logout</span>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <div class="topbar">
+          <div class="dash">
+            <i class="fa fa-bars" id="toggleBtn"></i>
+            <h2>Teachers</h2>
+          </div>
+
+          <div class="admin">
+            <img src="admin imgs/image copy.png" alt="profile" />
+            <h2>Admin</h2>
+          </div>
+        </div>
+      </div>
+
+
+<section class="manage-teachers">
+  <div class="teacher-card">
+    <h3>Manage Teachers</h3>
+    <button class="add-teacher-btn" id="openFormBtn">+ Add Teacher</button>
+
+    <!-- Teacher Cards Container -->
+    <div class="teacher-cards-container" id="teacherContainer"></div>
+  </div>
+</section>
+
+<!-- Modal Form -->
+<div id="teacherFormModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="formTitle">Add Teacher</h3>
+    <form id="teacherForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="position" placeholder="Position/Subject" required />
+      <input type="file" id="image" accept="image/*" />
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+
+    </div>
+
+    <script src="JavaScript/teacher.js"></script>
+  </body>
+</html>

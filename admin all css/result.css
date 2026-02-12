@@ -1,0 +1,214 @@
+/* BOX */
+.box{
+  width:400px;
+  padding:20px;
+  border:1px solid #ccc;
+  border-radius:12px;
+  margin:50px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  margin-bottom:15px;
+}
+
+.tabs button{
+  flex:1;
+  padding:10px;
+  border:1px solid #ccc;
+  background:#eee;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.tabs button.active{
+  background:#333;
+  color:#fff;
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+/* INPUTS & BUTTONS */
+input, select, button{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+button{
+  background:#333;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button:hover{
+  background:#555;
+}
+
+/* MESSAGES */
+#msg{
+  margin-top:8px;
+  font-weight:bold;
+  color:green;
+}
+
+/* RESULT CARD / MARKSHEET STYLE */
+.result-card{
+  margin-top:20px;
+  padding:20px;
+  border-radius:10px;
+  background:#f9f9f9;
+  border:2px solid #333;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.result-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  text-transform: uppercase;
+}
+
+.result-card table{
+  width:100%;
+  border-collapse: collapse;
+  margin-top:10px;
+}
+
+.result-card table, th, td{
+  border:1px solid #ccc;
+}
+
+.result-card th, td{
+  padding:10px;
+  text-align:left;
+}
+
+.status-pass{
+  color:green;
+  font-weight:bold;
+}
+
+.status-fail{
+  color:red;
+  font-weight:bold;
+}
+/* BOX */
+.box{
+  width:400px;
+  padding:20px;
+  border:1px solid #ccc;
+  border-radius:12px;
+  margin:50px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  margin-bottom:15px;
+}
+
+.tabs button{
+  flex:1;
+  padding:10px;
+  border:1px solid #ccc;
+  background:#eee;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.tabs button.active{
+  background:#333;
+  color:#fff;
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+/* INPUTS & BUTTONS */
+input, select, button{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+button{
+  background:#333;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button:hover{
+  background:#555;
+}
+
+/* MESSAGES */
+#msg{
+  margin-top:8px;
+  font-weight:bold;
+  color:green;
+}
+
+/* RESULT CARD / MARKSHEET STYLE */
+.result-card{
+  margin-top:20px;
+  padding:20px;
+  border-radius:10px;
+  background:#f9f9f9;
+  border:2px solid #333;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.result-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  text-transform: uppercase;
+}
+
+.result-card table{
+  width:100%;
+  border-collapse: collapse;
+  margin-top:10px;
+}
+
+.result-card table, th, td{
+  border:1px solid #ccc;
+}
+
+.result-card th, td{
+  padding:10px;
+  text-align:left;
+}
+
+.status-pass{
+  color:green;
+  font-weight:bold;
+}
+
+.status-fail{
+  color:red;
+  font-weight:bold;
+}
