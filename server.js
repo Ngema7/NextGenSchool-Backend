@@ -13,6 +13,8 @@ app.use(express.json());
 app.use("/api/marquee", require("./routes/marquee.routes"));
 app.use("/api/news", require("./routes/news.routes"));
 app.use("/api/events", require("./routes/events.routes"));
+app.use("/api/users", require("./routes/users.routes"));
+
 
 
 // db connect

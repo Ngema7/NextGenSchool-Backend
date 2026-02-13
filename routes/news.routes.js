@@ -1,35 +1,32 @@
 const router = require("express").Router();
-const Event = require("./models/event");
+const News = require("../models/news");
 
-// GET all events
+// GET all news
 router.get("/", async (req, res) => {
   try {
-    const events = await Event.find().sort({ date: 1 });
-    res.json(events);
+    const news = await News.find().sort({ date: -1 });
+    res.json(news);
   } catch (err) {
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// ADD event
+// ADD news
 router.post("/", async (req, res) => {
   try {
-    const { title, date, time } = req.body;
-
-    if (!title || !date || !time)
-      return res.status(400).json({ message: "All fields required" });
-
-    const newEvent = await Event.create({ title, date, time });
-    res.status(201).json(newEvent);
+    const { title, date } = req.body;
+    if (!title || !date) return res.status(400).json({ message: "Title and date required" });
+    const newNews = await News.create({ title, date });
+    res.status(201).json(newNews);
   } catch (err) {
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// DELETE event
+// DELETE news
 router.delete("/:id", async (req, res) => {
   try {
-    await Event.findByIdAndDelete(req.params.id);
+    await News.findByIdAndDelete(req.params.id);
     res.json({ message: "Deleted successfully" });
   } catch (err) {
     res.status(500).json({ message: "Server error" });

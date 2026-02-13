@@ -6,6 +6,7 @@
     <title>School Admin Dashboard</title>
     <link rel="stylesheet" href="admin all css/dashboard.css" />
     <link rel="stylesheet" href="admin all css/sidebar.css" />
+    <link rel="stylesheet" href="admin all css/adduser.css">  
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,19 +19,43 @@
         <div class="sidebar-top">
           <div class="logo">
             <img src="admin imgs/image copy.png" alt="logo" />
-            <h2>ABC School</h2>
+            <h2>NextGen School</h2>
           </div>
 
           <i class="fa fa-times" id="closeBtn"></i>
         </div>
 
-       <ul class="menu">
-          <li  class="active"><a href="admin.html"><i class="fa fa-home"></i><span>Dashboard</span></a> </li>
-          <li><a href="event.html"><i class="fa fa-calendar"></i><span>Events & marquee</span></a></li>
-          <li><a href="galery.html"><i class="fa fa-image"></i><span>Gallery</span></a></li>
-          <li><a href="teacher.html"><i class="fa fa-chalkboard-teacher"></i><span>Teachers</span></a></li>
-          <li><a href="masages.html"><i class="fa fa-envelope"></i><span>Messages</span></a></li>
-          <li><a href="result.html"><i class="fa fa-gear"></i><span>Result</span></a></li>
+        <ul class="menu">
+          <li class="active">
+            <a href="admin.html"
+              ><i class="fa fa-home"></i><span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="htmlsss/event.html"
+              ><i class="fa fa-calendar"></i><span>Events & marquee</span></a
+            >
+          </li>
+          <li>
+            <a href="htmlsss/galery.html"
+              ><i class="fa fa-image"></i><span>Gallery</span></a
+            >
+          </li>
+          <li>
+            <a href="htmlsss/teacher.html"
+              ><i class="fa fa-chalkboard-teacher"></i><span>Teachers</span></a
+            >
+          </li>
+          <li>
+            <a href="htmlsss/masages.html"
+              ><i class="fa fa-envelope"></i><span>Messages</span></a
+            >
+          </li>
+          <li>
+            <a href="htmlsss/result.html"
+              ><i class="fa fa-gear"></i><span>Result</span></a
+            >
+          </li>
         </ul>
 
         <div class="logout">
@@ -51,7 +76,6 @@
             <h2>Admin</h2>
           </div>
         </div>
-      
 
         <!-- STATS -->
         <div class="stats">
@@ -75,11 +99,26 @@
             <p>8</p>
           </div>
         </div>
-        
-      <!-- more ...-->
- 
 
+        <!-- more ...-->
+     <div class="container">
+  <h2>Add Admin <i class="fa fa-plus" id="showForm"></i></h2>
+
+  <form id="addUserForm" style="display: none">
+    <input type="text" id="name" placeholder="Name" required />
+    <div class="password-wrapper">
+      <input type="password" id="password" placeholder="Password" required />
+      <i class="fa fa-eye toggle-password" id="togglePass"></i>
     </div>
+    <button type="submit">Add</button>
+  </form>
+
+  <ul class="nge" id="newsList2"></ul>
+</div>
+
+
+
+      </div>
     </div>
     <script src="JavaScript/app.js"></script>
   </body>

@@ -1,32 +1,33 @@
 const router = require("express").Router();
-const News = require("./models/news");
+const Marquee = require("../models/Marquee");
 
-// GET all news
+// GET all
 router.get("/", async (req, res) => {
   try {
-    const news = await News.find().sort({ date: -1 });
-    res.json(news);
+    const data = await Marquee.find().sort({ createdAt: -1 });
+    res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// ADD news
+// ADD
 router.post("/", async (req, res) => {
   try {
-    const { title, date } = req.body;
-    if (!title || !date) return res.status(400).json({ message: "Title and date required" });
-    const newNews = await News.create({ title, date });
-    res.status(201).json(newNews);
+    const { text } = req.body;
+    if (!text) return res.status(400).json({ message: "Text required" });
+
+    const newItem = await Marquee.create({ text });
+    res.status(201).json(newItem);
   } catch (err) {
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// DELETE news
+// DELETE
 router.delete("/:id", async (req, res) => {
   try {
-    await News.findByIdAndDelete(req.params.id);
+    await Marquee.findByIdAndDelete(req.params.id);
     res.json({ message: "Deleted successfully" });
   } catch (err) {
     res.status(500).json({ message: "Server error" });

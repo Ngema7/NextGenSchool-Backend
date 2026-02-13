@@ -4,14 +4,23 @@ const closeBtn = document.getElementById("closeBtn");
 const sidebar = document.getElementById("sidebar");
 toggleBtn.addEventListener("click", () => sidebar.classList.add("active"));
 closeBtn.addEventListener("click", () => sidebar.classList.remove("active"));
-// ===== MARQUEE =====
+
+
+
+// sabai lai define gare ko 
+const BASE_URL = "http://localhost:5000"; 
+
+//marquee 
+
+
+
 window.addMarquee = async function () {
   const input = document.getElementById("marqueeInput");
-  const msgDiv = document.getElementById("marqueeMessage"); // optional div for messages
+  const msgDiv = document.getElementById("marqueeMessage"); 
   if (!input.value.trim()) return;
 
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/marquee`, {
+    const res = await fetch(`${BASE_URL}/api/marquee`, {  
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: input.value }),
@@ -44,9 +53,8 @@ window.addMarquee = async function () {
 
 window.loadMarquee = async function () {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/marquee`);
+    const res = await fetch(`${BASE_URL}/api/marquee`);  
     const data = await res.json();
-
     document.getElementById("marqueeDisplay").innerHTML = data
       .map((d) => d.text)
       .join(" &nbsp; ✦ &nbsp; ");
@@ -66,7 +74,7 @@ window.loadMarquee = async function () {
 
 window.deleteMarquee = async function (id) {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/marquee/${id}`, { method: "DELETE" });
+    const res = await fetch(`${BASE_URL}/api/marquee/${id}`, { method: "DELETE" });  
     const data = await res.json();
     alert(data.message);
     loadMarquee();
@@ -76,7 +84,13 @@ window.deleteMarquee = async function (id) {
   }
 };
 
-// ===== NEWS =====
+
+
+
+//newsss 
+
+
+
 window.addNews = async function () {
   const title = document.getElementById("newsInput").value;
   const date = document.getElementById("newsDate").value;
@@ -91,7 +105,7 @@ window.addNews = async function () {
   }
 
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/news`, {
+    const res = await fetch(`${BASE_URL}/api/news`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, date: new Date(date) }),
@@ -126,7 +140,7 @@ window.addNews = async function () {
 
 window.loadNews = async function () {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/news`);
+    const res = await fetch(`${BASE_URL}/api/news`);
     const data = await res.json();
     const ul = document.getElementById("newsList");
     ul.innerHTML = "";
@@ -144,7 +158,7 @@ window.loadNews = async function () {
 
 window.deleteNews = async function (id) {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/news/${id}`, { method: "DELETE" });
+    const res = await fetch(`${BASE_URL}/api/news/${id}`, { method: "DELETE" });
     const data = await res.json();
     alert(data.message);
     loadNews();
@@ -154,10 +168,12 @@ window.deleteNews = async function (id) {
   }
 };
 
-// ===== EVENTS ===== (your code is already mostly fixed)
+
 
 
 // ===== EVENTS =====
+
+
 window.addEvent = async function () {
   const title = document.getElementById("eventInput").value;
   const date = document.getElementById("eventDate").value;
@@ -171,7 +187,7 @@ window.addEvent = async function () {
   }
 
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/events`, {
+    const res = await fetch(`${BASE_URL}/api/events`, {   
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, date, time }),
@@ -180,17 +196,14 @@ window.addEvent = async function () {
     const data = await res.json();
 
     if (!res.ok) {
-      // Backend returned error
       msgDiv.style.color = "red";
       msgDiv.textContent = data.message || "Failed to add event!";
       return;
     }
 
-    // Success
     msgDiv.style.color = "green";
     msgDiv.textContent = `Event "${data.title}" saved successfully!`;
 
-    // Clear inputs
     document.getElementById("eventInput").value = "";
     document.getElementById("eventDate").value = "";
     document.getElementById("eventTime").value = "";
@@ -205,7 +218,7 @@ window.addEvent = async function () {
 
 window.loadEvents = async function () {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/events`);
+    const res = await fetch(`${BASE_URL}/api/events`);   
     const data = await res.json();
     const ul = document.getElementById("eventList");
     ul.innerHTML = "";
@@ -227,7 +240,7 @@ window.loadEvents = async function () {
 
 window.deleteEvent = async function (id) {
   try {
-    const res = await fetch(`${process.env.ADMIN_API}/api/events/${id}`, {
+    const res = await fetch(`${BASE_URL}/api/events/${id}`, {   
       method: "DELETE",
     });
     const data = await res.json();
@@ -239,10 +252,8 @@ window.deleteEvent = async function (id) {
   }
 };
 
-// Initialize
-window.addEventListener("DOMContentLoaded", () => {
-  loadEvents();
-});
+
+
 
 // Initialize
 window.addEventListener("DOMContentLoaded", () => {
